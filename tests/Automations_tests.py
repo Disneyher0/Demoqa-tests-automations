@@ -1,3 +1,4 @@
+import pytest
 from selene import have
 from selene.support.shared import browser
 #browser.config.hold_browser_open = True
@@ -20,7 +21,21 @@ def test_practice_form():
 
 
     browser.element('[id="uploadPicture"]').send_keys(r"/Users/darkwing_duck/Desktop/1626c37fd018bafe840a548bd30c749e.jpeg")
-    browser.element('[id="currentAddress"]').type('Russia,Moscow,street solnechnaya,4')
+    browser.element('[id="currentAddress"]').type('Russia, Moscow')
     browser.element('[id="react-select-3-input"]').type('NCR').press_enter()
     browser.element('[id="react-select-4-input"]').type('Noida').press_enter()
     browser.element('[id="submit"]').press_enter()
+
+    browser.element(".table-responsive").should(have.text("Sergey"))
+    browser.element(".table-responsive").should(have.text("Sobolev"))
+    browser.element(".table-responsive").should(have.text("sobolev.s@mail.ru"))
+    browser.element(".table-responsive").should(have.text("Male"))
+    browser.element(".table-responsive").should(have.text("7777777777"))
+    browser.element(".table-responsive").should(have.text("English"))
+    browser.element(".table-responsive").should(have.text("Hindi"))
+    browser.element(".table-responsive").should(have.text("Maths"))
+    browser.element(".table-responsive").should(have.text("Russia, Moscow"))
+    browser.element(".table-responsive").should(have.text("NCR"))
+    browser.element(".table-responsive").should(have.text("Noida"))
+
+
