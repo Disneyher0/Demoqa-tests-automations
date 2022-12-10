@@ -1,3 +1,4 @@
+import os
 import pytest
 from selene import have
 from selene.support.shared import browser
@@ -18,9 +19,7 @@ def test_practice_form():
     browser.element('[for="hobbies-checkbox-2"]').click()
     browser.element('[for="hobbies-checkbox-3"]').click()
 
-
-
-    browser.element('[id="uploadPicture"]').send_keys(r"/Users/darkwing_duck/Desktop/1626c37fd018bafe840a548bd30c749e.jpeg")
+    browser.element('[id="uploadPicture"]').send_keys(r"/Users/darkwing_duck/Desktop/123.jpeg")
     browser.element('[id="currentAddress"]').type('Russia, Moscow')
     browser.element('[id="react-select-3-input"]').type('NCR').press_enter()
     browser.element('[id="react-select-4-input"]').type('Noida').press_enter()
