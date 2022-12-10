@@ -19,8 +19,7 @@ def test_practice_form():
     browser.element('[for="hobbies-checkbox-2"]').click()
     browser.element('[for="hobbies-checkbox-3"]').click()
 
-    browser.element('#uploadPicture').send_keys(os.path.abspath('resources/123.jpeg'))
-    browser.element('#uploadPicture').send_keys(abs_path_from_project_root('../resources/test_pictures.webp'))
+    browser.element('#uploadPicture').send_keys(os.path.abspath('../resources/123.jpeg'))
     browser.element('[id="currentAddress"]').type('Russia, Moscow')
     browser.element('[id="react-select-3-input"]').type('NCR').press_enter()
     browser.element('[id="react-select-4-input"]').type('Noida').press_enter()
